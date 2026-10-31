@@ -454,3 +454,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === qrModal) qrModal.classList.add('hidden');
   });
 });
+
