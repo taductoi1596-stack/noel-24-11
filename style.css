@@ -1,0 +1,1150 @@
+/* ===================================================
+   CHRISTMAS NOEL 24/11 - LUXURY FESTIVE STYLING
+   =================================================== */
+
+:root {
+  --primary-red: #8b1021;
+  --dark-red: #500813;
+  --wine-red: #35050c;
+  --pine-green: #114227;
+  --dark-pine: #0a2416;
+  --gold-primary: #e6bc53;
+  --gold-light: #fff0aa;
+  --gold-dark: #b3821a;
+  --gold-grad: linear-gradient(135deg, #fff2b2 0%, #e5b842 40%, #aa7a1c 80%, #ffd97d 100%);
+  --bg-gradient: radial-gradient(circle at 50% 20%, #220810 0%, #0d1721 60%, #06090e 100%);
+  --card-bg: rgba(22, 13, 20, 0.88);
+  --text-main: #fcf9f2;
+  --text-muted: #d0c2b2;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+  --shadow-gold: 0 0 25px rgba(229, 184, 66, 0.35);
+  --shadow-box: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Background Snow Canvas */
+#snowCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===================================================
+   TOP NAVIGATION BAR
+   =================================================== */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: rgba(12, 18, 28, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 184, 66, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 50;
+}
+
+.brand-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--gold-primary);
+  letter-spacing: 1.5px;
+}
+
+.festive-tree {
+  font-size: 1.3rem;
+  animation: gentleSway 3s ease-in-out infinite alternate;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(229, 184, 66, 0.3);
+  color: #fff;
+  border-radius: 30px;
+  padding: 7px 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.nav-btn:hover {
+  background: rgba(229, 184, 66, 0.18);
+  border-color: var(--gold-primary);
+  transform: translateY(-1px);
+}
+
+.nav-btn.highlight {
+  background: var(--gold-grad);
+  color: #1a0808;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(229, 184, 66, 0.3);
+}
+
+.nav-btn.highlight:hover {
+  box-shadow: 0 4px 16px rgba(229, 184, 66, 0.5);
+}
+
+/* ===================================================
+   MAIN CONTAINER
+   =================================================== */
+.main-container {
+  position: relative;
+  z-index: 2;
+  padding: 90px 16px 40px;
+  max-width: 820px;
+  margin: 0 auto;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===================================================
+   STAGE 1: 3D CHRISTMAS GIFT BOX
+   =================================================== */
+.gift-box-stage {
+  text-align: center;
+  padding: 20px 0;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.intro-heading {
+  margin-bottom: 30px;
+}
+
+.festive-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  color: var(--gold-primary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.intro-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5.5vw, 3.2rem);
+  font-weight: 800;
+  background: var(--gold-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.intro-date {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 6px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.intro-sub {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  color: #ebdcd0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Gift Box 3D Wrapper */
+.gift-box-wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 30px auto;
+  cursor: pointer;
+  perspective: 900px;
+}
+
+.box-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(229, 184, 66, 0.35) 0%, rgba(139, 16, 33, 0.15) 50%, transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 2.5s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+.box-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.gift-box-wrapper:hover .box-container {
+  transform: translateY(-8px) rotateX(4deg);
+}
+
+/* Lid */
+.box-lid {
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  width: 220px;
+  height: 48px;
+  background: linear-gradient(135deg, #a51228, #730a1b);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(229, 184, 66, 0.6);
+  z-index: 5;
+  transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: top center;
+}
+
+.lid-ribbon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 100%;
+  background: var(--gold-grad);
+  box-shadow: 0 0 8px rgba(229, 184, 66, 0.5);
+}
+
+/* Ribbon Bow */
+.ribbon-bow {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 35px;
+  z-index: 8;
+}
+
+.bow-center {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background: var(--gold-grad);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+.bow-loop {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 24px;
+  background: var(--gold-grad);
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: inset 0 0 6px rgba(184, 134, 27, 0.6);
+}
+
+.bow-loop.left {
+  left: 6px;
+  transform: rotate(-30deg);
+}
+
+.bow-loop.right {
+  right: 6px;
+  transform: rotate(30deg);
+}
+
+.bow-ribbon-tail {
+  position: absolute;
+  top: 18px;
+  width: 10px;
+  height: 25px;
+  background: var(--gold-grad);
+  border-radius: 2px;
+}
+
+.bow-ribbon-tail.left {
+  left: 18px;
+  transform: rotate(20deg);
+}
+
+.bow-ribbon-tail.right {
+  right: 18px;
+  transform: rotate(-20deg);
+}
+
+/* Body */
+.box-body {
+  position: absolute;
+  top: 70px;
+  left: 25px;
+  width: 200px;
+  height: 150px;
+  background: linear-gradient(135deg, #880e20, #4c0612);
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(229, 184, 66, 0.4);
+  overflow: visible;
+}
+
+.body-ribbon-vert {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 100%;
+  background: var(--gold-grad);
+  box-shadow: 0 0 10px rgba(229, 184, 66, 0.4);
+}
+
+.body-ribbon-horiz {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 28px;
+  background: var(--gold-grad);
+  box-shadow: 0 0 10px rgba(229, 184, 66, 0.4);
+}
+
+/* Tag */
+.box-tag {
+  position: absolute;
+  right: -20px;
+  top: 25px;
+  transform: rotate(15deg);
+  z-index: 10;
+}
+
+.tag-string {
+  display: block;
+  width: 2px;
+  height: 15px;
+  background: var(--gold-primary);
+  margin-left: 20px;
+}
+
+.tag-card {
+  background: #fff8e8;
+  color: #4a0c14;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 1px dashed #b8861b;
+}
+
+.tag-date {
+  color: #a51228;
+  font-size: 0.7rem;
+}
+
+/* Box Prompt */
+.box-prompt {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(229, 184, 66, 0.15);
+  border: 1px solid rgba(229, 184, 66, 0.4);
+  padding: 10px 20px;
+  border-radius: 30px;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: bounceHint 2s infinite ease-in-out;
+}
+
+.pulse-icon {
+  font-size: 1.2rem;
+}
+
+.pulse-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+/* Box Opening Animation */
+.gift-box-wrapper.opening .box-lid {
+  transform: translateY(-90px) rotate(-25deg) scale(0.9);
+  opacity: 0;
+}
+
+.gift-box-wrapper.opening .box-body {
+  transform: scale(0.85);
+  opacity: 0;
+  transition: all 0.6s 0.2s ease;
+}
+
+.gift-box-wrapper.opening .box-prompt {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* ===================================================
+   STAGE 2: THE REVEALED CHRISTMAS CARD
+   =================================================== */
+.card-stage {
+  animation: popIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.greeting-card {
+  background: var(--card-bg);
+  border: 2px solid rgba(229, 184, 66, 0.5);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 5vw, 44px);
+  box-shadow: var(--shadow-box), 0 0 40px rgba(139, 16, 33, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.greeting-card::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px dashed rgba(229, 184, 66, 0.3);
+  border-radius: calc(var(--radius-lg) - 4px);
+  pointer-events: none;
+}
+
+.card-ornaments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.card-star {
+  color: var(--gold-primary);
+  font-size: 1.6rem;
+  animation: spinSlow 10s linear infinite;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.gold-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 5px;
+  color: var(--gold-primary);
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  background: var(--gold-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.card-date-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.banner-line {
+  height: 1px;
+  width: 50px;
+  background: var(--gold-grad);
+}
+
+.banner-date {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+/* ===================================================
+   CHRISTMAS TREE & LIGHTS
+   =================================================== */
+.tree-scene {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 24px;
+}
+
+.tree-container {
+  position: relative;
+  width: 140px;
+  height: 170px;
+}
+
+.star-topper {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffd97d;
+  font-size: 28px;
+  text-shadow: 0 0 14px rgba(255, 217, 125, 0.9);
+  animation: starPulse 2s ease-in-out infinite alternate;
+  z-index: 5;
+}
+
+.tree-tier {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: solid transparent;
+  border-right: solid transparent;
+  border-bottom: solid;
+}
+
+.tier-1 {
+  top: 14px;
+  border-left-width: 35px;
+  border-right-width: 35px;
+  border-bottom-width: 45px;
+  border-bottom-color: #1f6b43;
+  z-index: 3;
+}
+
+.tier-2 {
+  top: 45px;
+  border-left-width: 50px;
+  border-right-width: 50px;
+  border-bottom-width: 55px;
+  border-bottom-color: #175434;
+  z-index: 2;
+}
+
+.tier-3 {
+  top: 85px;
+  border-left-width: 68px;
+  border-right-width: 68px;
+  border-bottom-width: 65px;
+  border-bottom-color: #114227;
+  z-index: 1;
+}
+
+.tree-trunk {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 24px;
+  background: #5d3a1a;
+  border-radius: 3px;
+}
+
+/* Lights */
+.lights-string {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.light {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  animation: blinkLight 1.4s ease-in-out infinite alternate;
+  animation-delay: var(--d);
+}
+
+.light.red { background: #ff4757; box-shadow: 0 0 8px #ff4757; top: 40px; left: 58px; }
+.light.gold { background: #ffd97d; box-shadow: 0 0 8px #ffd97d; top: 60px; left: 42px; }
+.light.blue { background: #70a1ff; box-shadow: 0 0 8px #70a1ff; top: 75px; left: 88px; }
+.light.green { background: #2ed573; box-shadow: 0 0 8px #2ed573; top: 100px; left: 32px; }
+.light.gold:nth-child(5) { top: 110px; left: 95px; }
+.light.red:nth-child(6) { top: 125px; left: 60px; }
+.light.white { background: #ffffff; box-shadow: 0 0 8px #ffffff; top: 90px; left: 68px; }
+.light.gold:nth-child(8) { top: 135px; left: 110px; }
+
+/* Mini Baubles */
+.bauble {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 4;
+}
+.bauble.b1 { background: radial-gradient(circle at 30% 30%, #ffd97d, #b8861b); top: 52px; left: 78px; }
+.bauble.b2 { background: radial-gradient(circle at 30% 30%, #ff6b81, #c0392b); top: 85px; left: 45px; }
+.bauble.b3 { background: radial-gradient(circle at 30% 30%, #7bed9f, #2ed573); top: 118px; left: 80px; }
+.bauble.b4 { background: radial-gradient(circle at 30% 30%, #ffd97d, #b8861b); top: 130px; left: 38px; }
+
+/* ===================================================
+   GREETINGS & WISHES TEXT
+   =================================================== */
+.greeting-recipient {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.to-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+}
+
+.recipient-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 2px solid rgba(229, 184, 66, 0.4);
+  padding-bottom: 4px;
+}
+
+.wishes-content {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 30px;
+}
+
+.wish-para {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1rem, 2.8vw, 1.15rem);
+  color: #f0e6dc;
+  margin-bottom: 16px;
+}
+
+.wish-para.lead {
+  font-size: clamp(1.1rem, 3.2vw, 1.35rem);
+  color: #fff;
+}
+
+.highlight-gold {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.wish-para.quote {
+  font-style: italic;
+  color: #e5b842;
+  font-size: 0.95rem;
+  margin-top: 20px;
+}
+
+/* ===================================================
+   INTERACTIVE 3 MINI GIFTS
+   =================================================== */
+.interactive-gifts-section {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(229, 184, 66, 0.3);
+  border-radius: var(--radius-md);
+  padding: 22px 18px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.mini-gifts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.mini-gift-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(229, 184, 66, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 18px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-gift-card:hover {
+  background: rgba(229, 184, 66, 0.12);
+  border-color: var(--gold-primary);
+  transform: translateY(-3px);
+}
+
+.mini-box-icon {
+  font-size: 2rem;
+  margin-bottom: 6px;
+  transition: transform 0.3s ease;
+}
+
+.mini-gift-card:hover .mini-box-icon {
+  transform: scale(1.15) rotate(6deg);
+}
+
+.mini-box-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+.mini-box-reveal {
+  animation: fadeIn 0.4s ease;
+}
+
+.reveal-badge {
+  display: inline-block;
+  background: var(--gold-grad);
+  color: #1a0808;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+.mini-box-reveal p {
+  font-size: 0.8rem;
+  color: #f7ede2;
+  line-height: 1.4;
+}
+
+/* ===================================================
+   CARD SIGNATURE & ACTION BAR
+   =================================================== */
+.card-footer-sign {
+  text-align: right;
+  margin-bottom: 28px;
+  padding-right: 12px;
+}
+
+.sender-tag {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #cbbba9;
+}
+
+.sender-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  margin-top: 4px;
+}
+
+.card-action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.action-btn {
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gold-btn {
+  background: var(--gold-grad);
+  color: #1a0808;
+  border: none;
+  box-shadow: 0 4px 15px rgba(229, 184, 66, 0.4);
+}
+
+.gold-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 184, 66, 0.6);
+}
+
+.outline-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(229, 184, 66, 0.4);
+  color: #fff;
+}
+
+.outline-btn:hover {
+  background: rgba(229, 184, 66, 0.18);
+  border-color: var(--gold-primary);
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+   MODALS
+   =================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+.modal-card {
+  background: #141b24;
+  border: 2px solid rgba(229, 184, 66, 0.45);
+  border-radius: var(--radius-lg);
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  background: rgba(229, 184, 66, 0.12);
+  border-bottom: 1px solid rgba(229, 184, 66, 0.25);
+}
+
+.modal-header h3 {
+  font-size: 1.15rem;
+  color: var(--gold-primary);
+  font-weight: 700;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #aaa;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.btn-close:hover {
+  color: #fff;
+}
+
+.modal-body {
+  padding: 22px;
+}
+
+.modal-desc {
+  font-size: 0.9rem;
+  color: #c9d1d9;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(229, 184, 66, 0.3);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+textarea:focus {
+  border-color: var(--gold-primary);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.form-group select option {
+  background: #141b24;
+  color: #fff;
+}
+
+/* Wish Chips */
+.wish-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.quick-wish-chip {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(229, 184, 66, 0.25);
+  color: #f0e6dc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quick-wish-chip:hover {
+  background: rgba(229, 184, 66, 0.15);
+  border-color: var(--gold-primary);
+}
+
+textarea {
+  resize: vertical;
+  margin-bottom: 16px;
+}
+
+/* Action Buttons in Modal */
+.btn-primary-action {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  background: var(--gold-grad);
+  color: #1a0808;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(229, 184, 66, 0.4);
+}
+
+/* QR Code Section in Modal */
+.qr-preview-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0 18px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--gold-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.qr-preview-container canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.link-copy-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.link-copy-box input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(229, 184, 66, 0.3);
+  color: var(--gold-light);
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-family: monospace;
+}
+
+.btn-copy {
+  background: rgba(229, 184, 66, 0.2);
+  border: 1px solid var(--gold-primary);
+  color: #fff;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-copy:hover {
+  background: var(--gold-primary);
+  color: #1a0808;
+}
+
+.qr-download-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-secondary-link {
+  display: block;
+  text-align: center;
+  padding: 11px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(229, 184, 66, 0.4);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-secondary-link:hover {
+  background: rgba(229, 184, 66, 0.18);
+  border-color: var(--gold-primary);
+}
+
+/* ===================================================
+   ANIMATIONS
+   =================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.92) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.95; }
+}
+
+@keyframes bounceHint {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes gentleSway {
+  0% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes starPulse {
+  0% { transform: translateX(-50%) scale(0.9); opacity: 0.8; }
+  100% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+}
+
+@keyframes blinkLight {
+  0% { opacity: 0.25; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ===================================================
+   RESPONSIVE QUERIES
+   =================================================== */
+@media (max-width: 600px) {
+  .top-nav {
+    padding: 0 12px;
+  }
+  .brand-tag span:last-child {
+    display: none;
+  }
+  .nav-btn .btn-text {
+    display: none;
+  }
+  .nav-btn {
+    padding: 7px 10px;
+  }
+  .greeting-card {
+    padding: 24px 16px;
+  }
+  .mini-gifts-grid {
+    grid-template-columns: 1fr;
+  }
+}
