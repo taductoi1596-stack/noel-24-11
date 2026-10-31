@@ -463,7 +463,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCloseVideo = document.getElementById('btnCloseVideo');
   const videoModal = document.getElementById('videoModal');
   const aiVideoPlayer = document.getElementById('aiVideoPlayer');
+  const inlineAiVideo = document.getElementById('inlineAiVideo');
   const btnSpeakAiVoice = document.getElementById('btnSpeakAiVoice');
+
+  if (inlineAiVideo) {
+    inlineAiVideo.addEventListener('play', () => {
+      if (isPlaying) stopMusic();
+    });
+  }
 
   function openVideoModal() {
     videoModal.classList.remove('hidden');
