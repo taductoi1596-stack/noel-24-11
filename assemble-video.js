@@ -28,3 +28,4 @@ console.log('Executing:', oneLineCmd);
 
 execSync(oneLineCmd, { stdio: 'inherit' });
 console.log('Successfully generated video-noel-24-11.mp4!');
+

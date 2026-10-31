@@ -367,3 +367,4 @@ fs.writeFileSync(psPath, psScript, 'utf8');
 console.log('Running PowerShell script to generate video scenes...');
 execSync(`powershell -ExecutionPolicy Bypass -File "${psPath}"`, { stdio: 'inherit' });
 console.log('Finished generating scenes!');
+
