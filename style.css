@@ -832,6 +832,30 @@ body {
   box-shadow: 0 6px 20px rgba(229, 184, 66, 0.6);
 }
 
+.video-nav-btn {
+  background: linear-gradient(135deg, #c0392b, #8b1021);
+  color: #fff;
+  border: 1px solid rgba(229, 184, 66, 0.5);
+  font-weight: 700;
+}
+
+.video-nav-btn:hover {
+  background: linear-gradient(135deg, #e74c3c, #961327);
+  box-shadow: 0 4px 16px rgba(192, 57, 43, 0.5);
+}
+
+.video-btn {
+  background: linear-gradient(135deg, #b81b32, #6b0c1b);
+  color: #fff;
+  border: 1px solid var(--gold-primary);
+  box-shadow: 0 4px 15px rgba(184, 27, 50, 0.4);
+}
+
+.video-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 27, 50, 0.6);
+}
+
 .outline-btn {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(229, 184, 66, 0.4);

@@ -452,6 +452,71 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === wishModal) wishModal.classList.add('hidden');
     if (e.target === customizeModal) customizeModal.classList.add('hidden');
     if (e.target === qrModal) qrModal.classList.add('hidden');
+    if (e.target === videoModal) closeVideoModal();
   });
+
+  /* ===================================================
+     8. AI VIDEO MODAL & AI VOICE NARRATOR
+     =================================================== */
+  const btnOpenVideoNav = document.getElementById('btnOpenVideoNav');
+  const btnOpenVideoCard = document.getElementById('btnOpenVideoCard');
+  const btnCloseVideo = document.getElementById('btnCloseVideo');
+  const videoModal = document.getElementById('videoModal');
+  const aiVideoPlayer = document.getElementById('aiVideoPlayer');
+  const btnSpeakAiVoice = document.getElementById('btnSpeakAiVoice');
+
+  function openVideoModal() {
+    videoModal.classList.remove('hidden');
+    if (isPlaying) {
+      stopMusic();
+    }
+    if (aiVideoPlayer) {
+      aiVideoPlayer.currentTime = 0;
+      aiVideoPlayer.play().catch(() => {});
+    }
+  }
+
+  function closeVideoModal() {
+    videoModal.classList.add('hidden');
+    if (aiVideoPlayer) {
+      aiVideoPlayer.pause();
+    }
+  }
+
+  if (btnOpenVideoNav) btnOpenVideoNav.addEventListener('click', openVideoModal);
+  if (btnOpenVideoCard) btnOpenVideoCard.addEventListener('click', openVideoModal);
+  if (btnCloseVideo) btnCloseVideo.addEventListener('click', closeVideoModal);
+
+  // AI Voice Reading using SpeechSynthesis API
+  if (btnSpeakAiVoice) {
+    btnSpeakAiVoice.addEventListener('click', () => {
+      const recipient = displayRecipient ? displayRecipient.textContent : 'Bạn';
+      const textToSpeak = `Ho ho ho! Merry Christmas! Thân gửi ${recipient}. Chúc bạn một mùa Giáng Sinh Noel 24 tháng 11 thật ấm áp, an lành, ngập tràn niềm vui và những điều kỳ diệu nhất!`;
+      
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(textToSpeak);
+        utterance.lang = 'vi-VN';
+        utterance.rate = 0.95;
+        utterance.pitch = 1.05;
+
+        const voices = window.speechSynthesis.getVoices();
+        const viVoice = voices.find(v => v.lang && (v.lang.includes('vi') || v.lang.includes('VN')));
+        if (viVoice) utterance.voice = viVoice;
+
+        btnSpeakAiVoice.textContent = '🔊 Đang Đọc Lời Chúc...';
+        utterance.onend = () => {
+          btnSpeakAiVoice.textContent = '🗣️ AI Đọc Lời Chúc';
+        };
+        utterance.onerror = () => {
+          btnSpeakAiVoice.textContent = '🗣️ AI Đọc Lời Chúc';
+        };
+
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert(textToSpeak);
+      }
+    });
+  }
 });
 

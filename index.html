@@ -32,6 +32,12 @@
     </div>
 
     <div class="nav-actions">
+      <!-- AI Video Trigger -->
+      <button id="btnOpenVideoNav" class="nav-btn video-nav-btn" title="Xem Video AI Giáng Sinh">
+        <span class="btn-icon">🎬</span>
+        <span class="btn-text">Video AI</span>
+      </button>
+
       <!-- Music Toggle -->
       <button id="btnMusic" class="nav-btn" title="Bật / Tắt nhạc Giáng Sinh" aria-label="Bật tắt nhạc">
         <span class="btn-icon" id="musicIcon">🔔</span>
@@ -221,8 +227,14 @@
 
         <!-- Action Buttons -->
         <div class="card-action-bar">
+          <button id="btnOpenVideoCard" class="action-btn video-btn">
+            🎬 Xem Video AI Noel
+          </button>
+          <button id="btnSpeakAiVoice" class="action-btn outline-btn">
+            🗣️ AI Đọc Lời Chúc
+          </button>
           <button id="btnReplayMusic" class="action-btn gold-btn">
-            🎶 Phát Lại Giai Điệu Noel
+            🎶 Phát Lại Nhạc Chuông
           </button>
           <button id="btnOpenCustomize" class="action-btn outline-btn">
             ✏️ Tùy Chỉnh Thiệp
@@ -331,6 +343,32 @@
           </button>
           <a href="qr-noel-24-11.svg" download="ma-qr-noel-24-11.svg" class="btn-secondary-link">
             🎨 Tải Thiệp QR Khung Vàng Noel (SVG)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       MODAL: AI VIDEO PLAYER
+       ============================================== -->
+  <div class="modal-overlay hidden" id="videoModal">
+    <div class="modal-card video-dialog">
+      <div class="modal-header">
+        <h3>🎬 Video AI Giáng Sinh Noel 24/11</h3>
+        <button class="btn-close" id="btnCloseVideo">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="video-container" style="text-align: center;">
+          <video id="aiVideoPlayer" controls playsinline preload="metadata" poster="ai-santa.jpg" style="width: 100%; max-width: 380px; max-height: 65vh; border-radius: 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.7); background: #000;">
+            <source src="video-noel-24-11.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+          </video>
+        </div>
+
+        <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+          <a href="video-noel-24-11.mp4" download="video-noel-24-11.mp4" class="btn-primary-action" style="text-decoration: none; text-align: center; display: block;">
+            📥 Tải Video MP4 Về Máy (Chuẩn TikTok/Story)
           </a>
         </div>
       </div>
